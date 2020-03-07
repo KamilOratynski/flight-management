@@ -19,7 +19,7 @@ public class Tourist {
     private String country;
     private String notes;
     private LocalDate dateBirth;
-    @ManyToMany
+    @ManyToMany(targetEntity = Flight.class)
     private List<Flight> flightList;
 
 }

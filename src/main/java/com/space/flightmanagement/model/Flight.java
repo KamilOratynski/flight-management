@@ -17,7 +17,7 @@ public class Flight {
     private LocalDateTime departure;
     private LocalDateTime arrival;
     private int numberSeats;
-    @ManyToMany
+    @ManyToMany(targetEntity = Tourist.class)
     private List<Tourist> touristList;
     private BigDecimal ticketPrice;
 
