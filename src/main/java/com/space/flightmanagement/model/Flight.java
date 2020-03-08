@@ -1,24 +1,39 @@
 package com.space.flightmanagement.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Table(name = "flight")
 public class Flight {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private LocalDateTime departure;
-    private LocalDateTime arrival;
-    private int numberSeats;
-    @ManyToMany(targetEntity = Tourist.class)
-    private List<Tourist> touristList;
-    private BigDecimal ticketPrice;
+    @Column(name = "flight_id")
+    private Long flightId;
 
+    @Column(name = "departure")
+    private Date departure;
+
+    @Column(name = "arrival")
+    private Date arrival;
+
+    @Column(name = "number_seats")
+    private int numberSeats;
+
+    @ManyToMany(mappedBy = "flightList")
+    private List<Tourist> touristList;
+
+    @Column(name = "ticket_price")
+    private double ticketPrice;
 }
