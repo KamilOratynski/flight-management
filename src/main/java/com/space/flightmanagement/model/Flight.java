@@ -1,24 +1,19 @@
 package com.space.flightmanagement.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "flight")
 public class Flight {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "flight_id")
     private Long flightId;
 
@@ -31,9 +26,16 @@ public class Flight {
     @Column(name = "number_seats")
     private int numberSeats;
 
-    @ManyToMany(mappedBy = "flightList")
-    private List<Tourist> touristList;
+    @ManyToMany(mappedBy = "flights")
+    private List<Tourist> tourists = new ArrayList<>();
 
     @Column(name = "ticket_price")
     private double ticketPrice;
+
+    public Flight(Date departure, Date arrival, int numberSeats, double ticketPrice) {
+        this.departure = departure;
+        this.arrival = arrival;
+        this.numberSeats = numberSeats;
+        this.ticketPrice = ticketPrice;
+    }
 }
