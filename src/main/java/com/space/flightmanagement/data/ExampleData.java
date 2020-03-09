@@ -30,10 +30,10 @@ public class ExampleData {
                         faker.pokemon().name(),
                         faker.date().birthday(18, 65),
                         new Flight(
-                                faker.date().birthday(),
-                                faker.date().birthday(),
-                                faker.number().numberBetween(1, 10),
-                                faker.number().randomDouble(2, 2, 43))));
+                                faker.date().birthday(0, 1),
+                                faker.date().birthday(0, 1),
+                                faker.number().numberBetween(0, 10),
+                                faker.number().randomDouble(2, 50, 200))));
             }
         };
     }
