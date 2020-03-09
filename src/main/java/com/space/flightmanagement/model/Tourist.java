@@ -2,6 +2,7 @@ package com.space.flightmanagement.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.stream.Stream;
 @Data
 @EqualsAndHashCode(exclude = "flights")
 @Entity
+@NoArgsConstructor
 @Table(name = "tourist")
 public class Tourist {
 
