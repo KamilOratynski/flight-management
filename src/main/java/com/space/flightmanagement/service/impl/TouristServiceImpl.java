@@ -1,12 +1,11 @@
 package com.space.flightmanagement.service.impl;
 
+import com.google.common.collect.Lists;
 import com.space.flightmanagement.model.Tourist;
 import com.space.flightmanagement.repository.TouristRepository;
 import com.space.flightmanagement.service.CrudService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +20,7 @@ public class TouristServiceImpl implements CrudService<Tourist> {
 
     @Override
     public List<Tourist> findAll() {
-        return new ArrayList(Arrays.asList(touristRepository.findAll()));
+        return Lists.newArrayList(touristRepository.findAll());
     }
 
     @Override
