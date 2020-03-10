@@ -14,6 +14,7 @@ Technologies:
 * Java 8 <br>
 * Spring Boot (Spring WEB, Spring JPA)
 * PostgreSQL
+* MockMVC
 
 Library:
 * Lombok
