@@ -19,3 +19,4 @@ Technologies:
 Library:
 * Lombok
 * FakerJava
+* Swagger-UI
