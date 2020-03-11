@@ -15,8 +15,13 @@ Technologies:
 * Spring Boot (Spring WEB, Spring JPA)
 * PostgreSQL
 * MockMVC
+* Docker
 
 Library:
 * Lombok
 * FakerJava
 * Swagger-UI
+
+Deploy application:
+<h3>https://flight-management-space.herokuapp.com/swagger-ui.html</h3>
+<img src="https://res.cloudinary.com/dvxbeoob5/image/upload/v1580401080/app_yc96nx.png">
