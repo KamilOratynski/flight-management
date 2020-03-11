@@ -24,4 +24,4 @@ Library:
 
 Deploy application:
 <h3>https://flight-management-space.herokuapp.com/swagger-ui.html</h3>
-<img src="https://res.cloudinary.com/dvxbeoob5/image/upload/v1580401080/app_yc96nx.png">
+<img src="https://res.cloudinary.com/dvxbeoob5/image/upload/v1583963833/database_z54gaz.png">
