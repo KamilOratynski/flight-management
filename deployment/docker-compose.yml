@@ -6,12 +6,11 @@ services:
       context: ../
       dockerfile: Dockerfile
     ports:
-      - "7070:7070"
+      - "7070:8080"
     depends_on:
       - database
     links:
       - database
-    restart: always
   database:
     container_name: 'database'
     image: postgres
