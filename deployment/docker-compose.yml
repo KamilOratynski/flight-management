@@ -9,6 +9,8 @@ services:
       - "7070:7070"
     depends_on:
       - database
+    links:
+      - database
     restart: always
   database:
     container_name: 'database'
@@ -17,6 +19,4 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
-    ports:
-      - "5432:5432"
     restart: always
