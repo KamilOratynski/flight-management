@@ -26,7 +26,7 @@ public class ExampleData {
 
     public ApplicationRunner addTouristAndFlightToDatabase(FlightServiceImpl flightService) {
         return args -> {
-            for (int i = 0; i < 500; i++) {
+            for (int i = 0; i < 1000; i++) {
                 ArrayList<Tourist> tourists = Lists.newArrayList(
                         new Tourist(
                                 faker.name().firstName(),
