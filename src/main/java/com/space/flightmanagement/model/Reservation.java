@@ -2,15 +2,21 @@ package com.space.flightmanagement.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
 @Data
+@Entity
+@Table(name = "reservation")
 public class Reservation {
 
     @Id
-    private Long id;
-    private Long flight_id;
-    private Long tourist_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "reservation_id")
+    private Long reservationId;
+
+    @Column(name = "flight")
+    private Long flight;
+
+    @Column(name = "tourist")
+    private Long tourist;
 }

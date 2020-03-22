@@ -1,17 +1,14 @@
 package com.space.flightmanagement.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
-@EqualsAndHashCode(exclude = "flights")
-@Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Table(name = "tourist")
 public class Tourist {
 
@@ -37,10 +34,6 @@ public class Tourist {
 
     @Column(name = "date_birth")
     private String dateBirth;
-
-    @JsonBackReference
-    @ManyToMany(mappedBy = "tourists")
-    private List<Flight> flights;
 
     public Tourist(String name, String surname, Gender gender, String country, String notes, String dateBirth) {
         this.name = name;
