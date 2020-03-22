@@ -1,18 +1,17 @@
 package com.space.flightmanagement.data;
 
 import com.github.javafaker.Faker;
-import com.google.common.collect.Lists;
 import com.space.flightmanagement.model.Flight;
 import com.space.flightmanagement.model.Tourist;
-import com.space.flightmanagement.repository.TouristRepository;
 import com.space.flightmanagement.service.impl.FlightServiceImpl;
+import com.space.flightmanagement.service.impl.ReservationServiceImpl;
 import com.space.flightmanagement.service.impl.TouristServiceImpl;
 import org.springframework.boot.ApplicationRunner;
 
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Locale;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ExampleData {
 
@@ -43,6 +42,17 @@ public class ExampleData {
                                 dataFormatFlight.format(faker.date().birthday(0, 1)),
                                 faker.number().numberBetween(5, 10),
                                 faker.number().randomDouble(2, 50, 200)));
+            }
+        };
+    }
+
+    public ApplicationRunner addReservation(ReservationServiceImpl reservationService) {
+        final Long[] j = {1L};
+        return args -> {
+            for (long i = 1L; i <= 1000; i++) {
+                long flightId = ThreadLocalRandom.current().nextLong(0, 1000);
+                reservationService.save(flightId, i);
+                j[0]++;
             }
         };
     }

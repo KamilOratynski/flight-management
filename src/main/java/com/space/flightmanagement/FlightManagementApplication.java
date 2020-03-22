@@ -1,8 +1,8 @@
 package com.space.flightmanagement;
 
 import com.space.flightmanagement.data.ExampleData;
-import com.space.flightmanagement.repository.TouristRepository;
 import com.space.flightmanagement.service.impl.FlightServiceImpl;
+import com.space.flightmanagement.service.impl.ReservationServiceImpl;
 import com.space.flightmanagement.service.impl.TouristServiceImpl;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +19,12 @@ public class FlightManagementApplication {
     }
 
     @Bean
-    ApplicationRunner init(FlightServiceImpl flightService, TouristServiceImpl touristService) {
+    ApplicationRunner initData(FlightServiceImpl flightService, TouristServiceImpl touristService) {
         return exampleData.addTouristAndFlightToDatabase(flightService, touristService);
+    }
+
+    @Bean
+    ApplicationRunner initReservation(ReservationServiceImpl reservationService) {
+        return exampleData.addReservation(reservationService);
     }
 }
